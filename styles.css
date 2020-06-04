@@ -1,0 +1,105 @@
+
+* {
+    /* COLORS/FONTS: */
+    --main-bg-color: #000;
+    --sec-bg-color: #777;
+    --light-text-color: #eee;
+    --dark-text-color: #222;
+    --nums-color: #c28ace; /* purple */
+    --equals-color: #ffe88d; /* yellow */
+    --operators-color: #ffac63; /* orange */
+    --clear-color: #ff6363; /* red */
+    --def-font: "Helvetica Neue", Helvetica, sans-serif;
+
+    /* SCAFFOLDING/LAYOUT: */
+    --def-height: 60px;
+    --equals-height: var(--def-height) * 4;
+    --def-font-size: 24px;
+    --display-font-size: 36px;
+}
+
+a {
+    text-decoration: none;
+}
+
+.parent {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    grid-template-rows: repeat(6, 1fr);
+    grid-column-gap: 0px;
+    grid-row-gap: 0px;
+    width: 400px;
+    background-color: var(--sec-bg-color);
+    font-family: var(--def-font);
+    border-radius: 10px;
+    padding: 10px;
+}
+
+.parent div {
+    display: flex;
+    align-items: center;
+    margin: 10px;
+    border-radius: 10px;
+}
+.parent div:not(:first-child) {
+    justify-content: center;
+    font-size: var(--def-font-size); 
+    padding: 5px; 
+}
+/* ALL CHILDREN EXCEPT .equals: */
+.parent .nums, .ops, .clear, .display {
+    height: var(--def-height);  
+}
+
+/* ALL: OPERATORS */
+.ops {
+    background-color: var(--operators-color);
+    color: var(--dark-text-color);
+}
+
+/* ALL: NUMBERS */
+.nums {
+    background-color: var(--nums-color);
+    color: var(--dark-text-color);
+}   
+.display {
+    grid-area: 1 / 1 / 2 / 5;
+    padding: 5px 10px;
+    font-size: var(--display-font-size);
+    justify-content: flex-end;
+    background-color: var(--light-text-color);
+    color: var(--dark-text-color);
+    }
+
+/* SPECIFIC: EACH OPERATOR: */
+.plus  { grid-area: 2 / 1 / 3 / 2; }
+.minus { grid-area: 2 / 2 / 3 / 3; }
+.mult  { grid-area: 2 / 3 / 3 / 4; }
+.div   { grid-area: 2 / 4 / 3 / 5; }
+
+/* SPECIFIC: EACH NUMBER + CLEAR: */
+.seven { grid-area: 3 / 1 / 4 / 2; }
+.eight { grid-area: 3 / 2 / 4 / 3; }
+.nine  { grid-area: 3 / 3 / 4 / 4; }
+.leftP { grid-area: 3 / 4 / 4 / 5; }
+.rightP{ grid-area: 4 / 4 / 5 / 5; }
+.four  { grid-area: 4 / 1 / 5 / 2; }
+.five  { grid-area: 4 / 2 / 5 / 3; }
+.six   { grid-area: 4 / 3 / 5 / 4; }
+.one   { grid-area: 5 / 1 / 6 / 2; }
+.two   { grid-area: 5 / 2 / 6 / 3; }
+.three { grid-area: 5 / 3 / 6 / 4; }
+.zero  { grid-area: 6 / 1 / 7 / 2; }
+.dec   { grid-area: 6 / 2 / 7 / 3; }
+.clear {
+    grid-area: 6 / 3 / 7 / 4;
+    background-color: var(--clear-color); 
+}
+
+/* EQUALS: */
+.equals {
+    grid-area: 5 / 4 / 7 / 5;
+    height: var(--equals-height);
+    background-color: var(--equals-color);
+    color: var(--dark-text-color);  
+}
