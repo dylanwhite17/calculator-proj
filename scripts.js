@@ -7,19 +7,19 @@ const display = document.querySelector('.display-para')
 const operators = {
     plus: {
         queryClick: document.querySelector('.plus'),
-        operator: false
+        op: true
         },
     minus: {
         queryClick: document.querySelector('.minus'),
-        operator: false
+        op: false
     }, 
     mult: {
         queryClick: document.querySelector('.mult'),
-        operator: false
+        op: false
     }, 
     div: {
         queryClick: document.querySelector('.div'),
-        operator: false
+        op: false
     }  
 }
 
@@ -89,100 +89,118 @@ const userInput = {
     }
 }
 
-equals.queryClick.addEventListener('click', function(){
-    //console.log(equals.value1, equals.op, equals.value2)
-    if (equals.op = '+')
-    display.textContent = (addTwo(equals.value1, equals.value2))
-    equals.value1 = null
-    equals.value2 = null
-    equals.op = null
-})
+// equals.queryClick.addEventListener('click', function(){
+//     //console.log(equals.value1, equals.op, equals.value2)
+//     if (equals.op = '+')
+//     display.textContent = (addTwo(equals.value1, equals.value2))
+//     equals.value1 = null
+//     equals.value2 = null
+//     equals.op = null
+// })
 
-clear.queryClick.addEventListener('click', function(){
-    display.textContent = clear.value
-})
+// clear.queryClick.addEventListener('click', function(){
+//     display.textContent = clear.value
+// })
 
-div.queryClick.addEventListener('click', function(){
-    display.textContent += div.value
-})
+// div.queryClick.addEventListener('click', function(){
+//     display.textContent += div.value
+// })
 
-mult.queryClick.addEventListener('click', function(){
-    display.textContent += mult.value
-})
+// mult.queryClick.addEventListener('click', function(){
+//     display.textContent += mult.value
+// })
 
-minus.queryClick.addEventListener('click', function(){
-    display.textContent += minus.value
-})
+// minus.queryClick.addEventListener('click', function(){
+//     display.textContent += minus.value
+// })
 
-plus.queryClick.addEventListener('click', function(){
-    if (display.content) {
-        display.textContent = clear.value
-    }
-    display.textContent = plus.op
-    equals.op = plus.op
-})
+// plus.queryClick.addEventListener('click', function(){
+//     if (display.content) {
+//         display.textContent = clear.value
+//     }
+//     display.textContent = plus.op
+//     equals.op = plus.op
+// })
 
-one.queryClick.addEventListener('click', function(){
-    display.textContent = clear.value
-    if (equals.value1 == null) {
-        display.textContent = one.value
-        equals.value1 = one.value
-    } else if (equals.value2 == null) {
-        display.textContent = one.value
-        equals.value2 = one.value
-    }
-    // display.textContent += one.value
-})
+// one.queryClick.addEventListener('click', function(){
+//     display.textContent = clear.value
+//     if (equals.value1 == null) {
+//         display.textContent = one.value
+//         equals.value1 = one.value
+//     } else if (equals.value2 == null) {
+//         display.textContent = one.value
+//         equals.value2 = one.value
+//     }
+//     // display.textContent += one.value
+// })
 
-two.queryClick.addEventListener('click', function(){
-    display.textContent += parseInt(two.value)
-})
+// two.queryClick.addEventListener('click', function(){
+//     display.textContent += parseInt(two.value)
+// })
 
-three.queryClick.addEventListener('click', function(){
-    display.textContent += three.value
-})
+// three.queryClick.addEventListener('click', function(){
+//     display.textContent += three.value
+// })
 
-four.queryClick.addEventListener('click', function(){
-    display.textContent += four.value
-})
+// four.queryClick.addEventListener('click', function(){
+//     display.textContent += four.value
+// })
 
-five.queryClick.addEventListener('click', function(){
-    display.textContent += five.value
-})
+// five.queryClick.addEventListener('click', function(){
+//     display.textContent += five.value
+// })
 
-six.queryClick.addEventListener('click', function(){
-    display.textContent += six.value
-})
+// six.queryClick.addEventListener('click', function(){
+//     display.textContent += six.value
+// })
 
-seven.queryClick.addEventListener('click', function(){
-    display.textContent += seven.value
-})
+// seven.queryClick.addEventListener('click', function(){
+//     display.textContent += seven.value
+// })
 
-eight.queryClick.addEventListener('click', function(){
-    display.textContent += eight.value
-})
+// eight.queryClick.addEventListener('click', function(){
+//     display.textContent += eight.value
+// })
 
-nine.queryClick.addEventListener('click', function(){
-    display.textContent += nine.value
-})
+// nine.queryClick.addEventListener('click', function(){
+//     display.textContent += nine.value
+// })
 
-zero.queryClick.addEventListener('click', function(){
-    display.textContent += zero.value
-})
+// zero.queryClick.addEventListener('click', function(){
+//     display.textContent += zero.value
+// })
 
-decimal.queryClick.addEventListener('click', function(){
-    display.textContent += decimal.value
-})
+// decimal.queryClick.addEventListener('click', function(){
+//     display.textContent += decimal.value
+// })
 
-leftPara.queryClick.addEventListener('click', function(){
-    display.textContent += leftPara.value
-})
+// leftPara.queryClick.addEventListener('click', function(){
+//     display.textContent += leftPara.value
+// })
 
-rightPara.queryClick.addEventListener('click', function(){
-    display.textContent += rightPara.value
-})
+// rightPara.queryClick.addEventListener('click', function(){
+//     display.textContent += rightPara.value
+// })
 
-function addTwo(x, y) {
+// function addTwo(x, y) {
     
-    return x + y
+//     return x + y
+// }
+
+function plus() {
+    console.log('plus works')
 }
+
+function allOps() {
+    if (operators.plus.op) {
+        console.log(operators.plus.op)
+        plus()
+    } else if (operators.minus.op) {
+        minus()
+    } else if (operators.mult.op) {
+        mult()
+    } else if (operators.div.op) {
+        minus()
+    }
+}
+allOps()
