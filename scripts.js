@@ -1,85 +1,92 @@
 //// CALC PROJ:
 
-//Query Selectors:
+////Variables/Objects:
 const display = document.querySelector('.display-para')
-const plus = {
-    queryClick: document.querySelector('.plus'),
-    op: '+'  
-}
-const minus = {
-    queryClick: document.querySelector('.minus'),
-    op: '-'   
-}
-const mult = {
-    queryClick: document.querySelector('.mult'),
-    value: '*'   
-}
-const div = {
-    queryClick: document.querySelector('.div'),
-    value: '/'   
-}
-const leftPara = {
-    queryClick: document.querySelector('.leftP'),
-    value: '('   
-}
-const rightPara = {
-    queryClick: document.querySelector('.rightP'),
-    value: ')'   
-}
-const seven = {
-    queryClick: document.querySelector('.seven'),
-    value: 7   
+
+//OPERATORS:
+const operators = {
+    plus: {
+        queryClick: document.querySelector('.plus'),
+        operator: false
+        },
+    minus: {
+        queryClick: document.querySelector('.minus'),
+        operator: false
+    }, 
+    mult: {
+        queryClick: document.querySelector('.mult'),
+        operator: false
+    }, 
+    div: {
+        queryClick: document.querySelector('.div'),
+        operator: false
+    }  
 }
 
-const eight = {
-    queryClick: document.querySelector('.eight'),
-    value: 8 
-}
-const nine = {
-    queryClick: document.querySelector('.nine'),
-    value: 9   
-}
-const four = {
-    queryClick: document.querySelector('.four'),
-    value: 4   
-}
-const five = {
-    queryClick: document.querySelector('.five'),
-    value: 5   
-}
-const six = {
-    queryClick: document.querySelector('.six'),
-    value: 6   
-}
-const one = {
-    queryClick: document.querySelector('.one'),
-    value: 1   
-}
-const two = {
-    queryClick: document.querySelector('.two'),
-    value: 2   
-}
-const three = {
-    queryClick: document.querySelector('.three'),
-    value: 3   
-}
-const zero = {
-    queryClick: document.querySelector('.zero'),
-    value: 0   
-}
-const decimal = {
-    queryClick: document.querySelector('.dec'),
-    value: '.'   
-}
-const clear = {
-    queryClick: document.querySelector('.clear'),
-    value: ''   
-}
-let equals = {
-    queryClick: document.querySelector('.equals'),
-    op: null,
-    value1: null,
-    value2: null   
+//NUMS + SCREEN CONTENT:
+const userInput = {
+    one: {
+        queryClick: document.querySelector('.one'),
+        value: 1
+        },
+    two: {
+        queryClick: document.querySelector('.two'),
+        value: 2
+    }, 
+    three: {
+        queryClick: document.querySelector('.three'),
+        value: 3
+    }, 
+    four: {
+        queryClick: document.querySelector('.four'),
+        value: 4
+    },
+    five: {
+        queryClick: document.querySelector('.five'),
+        value: 5
+        },
+    six: {
+        queryClick: document.querySelector('.six'),
+        value: 6
+    }, 
+    seven: {
+        queryClick: document.querySelector('.seven'),
+        value: 7
+    }, 
+    eight: {
+        queryClick: document.querySelector('.eight'),
+        value: 8
+    },
+    nine: {
+        queryClick: document.querySelector('.nine'),
+        value: 9
+        },
+    zero: {
+        queryClick: document.querySelector('.zero'),
+        value: 0
+    }, 
+    leftP: {
+        queryClick: document.querySelector('.leftP'),
+        value: '('
+    }, 
+    rightP: {
+        queryClick: document.querySelector('.rightP'),
+        value: ')'
+    },
+    dec: {
+        queryClick: document.querySelector('.dec'),
+        value: '.'
+    },
+    clear: {
+        queryClick: document.querySelector('.clear'),
+        value: ''   
+    },
+    equals: {
+        queryClick: document.querySelector('.equals'),
+        op: null,
+        value1: null,
+        value2: null   
+    }
 }
 
 equals.queryClick.addEventListener('click', function(){
