@@ -22,7 +22,7 @@ a {
     text-decoration: none;
 }
 
-.parent {
+#parent {
     display: grid;
     grid-template-columns: repeat(4, 1fr);
     grid-template-rows: repeat(6, 1fr);
@@ -35,30 +35,30 @@ a {
     padding: 10px;
 }
 
-.parent div {
+#parent div {
     display: flex;
     align-items: center;
     margin: 10px;
     border-radius: 10px;
 }
-.parent div:not(:first-child) {
+#parent div:not(:first-child) {
     justify-content: center;
     font-size: var(--def-font-size); 
     padding: 5px; 
 }
 /* ALL CHILDREN EXCEPT .equals: */
-.parent .nums, .ops, .clear, .display {
+#parent #nums, #ops, .clear, .display {
     height: var(--def-height);  
 }
 
 /* ALL: OPERATORS */
-.ops {
+#ops {
     background-color: var(--operators-color);
     color: var(--dark-text-color);
 }
 
 /* ALL: NUMBERS */
-.nums {
+#nums {
     background-color: var(--nums-color);
     color: var(--dark-text-color);
 }   
